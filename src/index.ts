@@ -5,7 +5,7 @@ import morgan from 'morgan';
 const app = express();
 
 app.get('/', (req, res) => {
-  res.end('Hola mundo!!!');
+  res.send('Hola mundo!!!');
 });
 
 app.listen(6505, () => {
