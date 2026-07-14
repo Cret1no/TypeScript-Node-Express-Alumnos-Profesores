@@ -5,7 +5,7 @@ class EstudiantesController {
 
   consultar(req: Request, res: Response) {
     try {
-      res.send('consulta');
+      res.send('consulta por estudiantes');
     } catch (err) {
       if (err instanceof Error) {
         res.status(500).send(err.message);
@@ -51,6 +51,7 @@ class EstudiantesController {
         res.status(500).send(err.message);
       }
     }
+  }
 }
 
-export default new EstudiantesController(); 
+export default new EstudiantesController();

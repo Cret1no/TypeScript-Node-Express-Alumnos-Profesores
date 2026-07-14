@@ -1,19 +1,16 @@
-const express = require('express');
+import express from 'express';
+import cursosController from '../controllers/cursosController';
 const router = express.Router();
-const {
-  consultar,
-  ingresar,
-  consultarDetalle,
-  actualizar,
-  borrar,
-  asociarEstudiante,
-} = require('../controllers/cursosController.js');
 
-router.get('/', consultar);
+router.get('/', cursosController.consultar);
 
-router.post('/', ingresar);
-router.post('/registrarEstudiante', asociarEstudiante);
+router.post('/', cursosController.ingresar);
+//router.post('/registrarEstudiante', asociarEstudiante);
 
-router.route('/:id').get(consultarDetalle).put(actualizar).delete(borrar);
+router
+  .route('/:id')
+  .get(cursosController.consultarDetalle)
+  .put(cursosController.actualizar)
+  .delete(cursosController.borrar);
 
-module.exports = router;
+export default router;

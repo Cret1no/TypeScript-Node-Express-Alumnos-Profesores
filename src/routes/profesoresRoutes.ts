@@ -1,17 +1,15 @@
-const express = require('express');
+import express from 'express';
+import profesoresController from '../controllers/profesoresController';
 const router = express.Router();
-const {
-  consultar,
-  ingresar,
-  consultarDetalle,
-  actualizar,
-  borrar,
-} = require('../controllers/profesoresController.js');
 
-router.get('/', consultar);
+router.get('/', profesoresController.consultar);
 
-router.post('/', ingresar);
+router.post('/', profesoresController.ingresar);
 
-router.route('/:id').get(consultarDetalle).put(actualizar).delete(borrar);
+router
+  .route('/:id')
+  .get(profesoresController.consultarDetalle)
+  .put(profesoresController.actualizar)
+  .delete(profesoresController.borrar);
 
-module.exports = router;
+export default router;

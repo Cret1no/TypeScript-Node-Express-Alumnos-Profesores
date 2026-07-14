@@ -1,17 +1,15 @@
 import express from 'express';
+import estudiantesController from '../controllers/estudiantesController';
 const router = express.Router();
-const {
-  consultar,
-  ingresar,
-  consultarDetalle,
-  actualizar,
-  borrar,
-} from '../controllers/estudiantesController';
 
-router.get('/', consultar);
+router.get('/', estudiantesController.consultar);
 
-router.post('/', ingresar);
+router.post('/', estudiantesController.ingresar);
 
-router.route('/:id').get(consultarDetalle).put(actualizar).delete(borrar);
+router
+  .route('/:id')
+  .get(estudiantesController.consultarDetalle)
+  .put(estudiantesController.actualizar)
+  .delete(estudiantesController.borrar);
 
 export default router;
