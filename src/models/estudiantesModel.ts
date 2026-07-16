@@ -4,10 +4,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  BaseEntity,
 } from 'typeorm';
 
 @Entity('estudiantes')
-export class Estudiante {
+export class Estudiante extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
