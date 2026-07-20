@@ -1,0 +1,16 @@
+POST http://localhost:6505/estudiantes/
+Content-Type: application/json
+
+{
+    "dni": "78459854",
+    "nombre": "Luis",
+    "apellido": "Hielpi",
+    "email": "lhmaster@gmail.com",
+
+}
+
+###
+GET http://localhost:6505/estudiantes/5
+
+###
+DELETE http://localhost:6505/estudiantes/4
