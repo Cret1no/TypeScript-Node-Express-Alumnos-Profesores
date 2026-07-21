@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
@@ -7,14 +8,15 @@ import {
   ManyToMany,
   ManyToOne,
   PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { Profesor } from './profesoresModel';
 import { Estudiante } from './estudiantesModel';
 
 @Entity('cursos')
-export class Curso {
-  @PrimaryColumn()
+export class Curso extends BaseEntity {
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
